@@ -2,6 +2,7 @@ package me.shrikanthravi.lib.chatui.data
 
 import kotlinx.coroutines.delay
 import me.shrikanthravi.lib.chatui.utils.messages
+import me.shrikanthravi.lib.chatui.utils.newMessages
 import me.shrikanthravi.libraries.chatuikit.models.JcChatMessage
 
 /**
@@ -9,7 +10,11 @@ import me.shrikanthravi.libraries.chatuikit.models.JcChatMessage
  */
 class MessageApi {
     suspend fun getMessages(page: Int): List<JcChatMessage> {
-        delay(1000)
-        return messages.reversed()
+        return if(page < 1) {
+            delay(1000)
+             newMessages.reversed()
+        } else {
+            listOf()
+        }
     }
 }

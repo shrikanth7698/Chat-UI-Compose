@@ -31,7 +31,6 @@ import me.shrikanthravi.libraries.chatuikit.R
 import me.shrikanthravi.libraries.chatuikit.models.JcChatMessage
 import me.shrikanthravi.libraries.chatuikit.models.JcChatType
 import me.shrikanthravi.libraries.chatuikit.models.JcChatConfig
-import me.shrikanthravi.libraries.chatuikit.utils.InfiniteListHandler
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -181,9 +180,9 @@ fun ChatMessageItem(
     ) {
         Row(
             modifier = if (isOwnMessage) {
-                Modifier.align(Alignment.CenterEnd)
+                Modifier.align(Alignment.CenterEnd).padding(start = 100.dp)
             } else {
-                Modifier.align(Alignment.CenterStart)
+                Modifier.align(Alignment.CenterStart).padding(end = 100.dp)
             }
         ) {
             if (isOwnMessage) {
